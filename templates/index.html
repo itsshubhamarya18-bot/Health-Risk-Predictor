@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Severity Predictor</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="page">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="header">
+
+            <div class="header-icon">
+                +
+            </div>
+
+            <div>
+                <h1>Medical Severity Predictor</h1>
+
+                <p>
+                    Enter patient information to predict
+                    the severity level
+                </p>
+            </div>
+
+        </header>
+
+
+        <!-- ================= MAIN CARD ================= -->
+
+        <main class="main-card">
+
+            <form id="predictionForm">
+
+
+                <!-- ================= PATIENT INFORMATION ================= -->
+
+                <section>
+
+                    <div class="section-title">
+                        <span>01</span>
+                        <div>
+                            <h2>Patient Information</h2>
+                            <p>Basic patient details</p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- AGE -->
+
+                        <div class="form-group">
+
+                            <label for="Age">
+                                Age
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Age"
+                                min="0"
+                                max="120"
+                                placeholder="Enter age"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- GENDER -->
+
+                        <div class="form-group">
+
+                            <label for="Gender">
+                                Gender
+                            </label>
+
+                            <select id="Gender" required>
+
+                                <option value="">
+                                    Select gender
+                                </option>
+
+                                <option value="Male">
+                                    Male
+                                </option>
+
+                                <option value="Female">
+                                    Female
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= SYMPTOMS ================= -->
+
+                <section>
+
+                    <div class="section-title">
+
+                        <span>02</span>
+
+                        <div>
+                            <h2>Symptoms</h2>
+                            <p>Select the patient's symptoms</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- SYMPTOM 1 -->
+
+                        <div class="form-group">
+
+                            <label for="Symptom_1">
+                                Symptom 1
+                            </label>
+
+                            <select id="Symptom_1" required>
+
+                                <option value="">
+                                    Select symptom
+                                </option>
+
+                                <option value="Fatigue">
+                                    Fatigue
+                                </option>
+
+                                <option value="Sore throat">
+                                    Sore throat
+                                </option>
+
+                                <option value="Body ache">
+                                    Body ache
+                                </option>
+
+                                <option value="Shortness of breath">
+                                    Shortness of breath
+                                </option>
+
+                                <option value="Runny nose">
+                                    Runny nose
+                                </option>
+
+                                <option value="Headache">
+                                    Headache
+                                </option>
+
+                                <option value="Cough">
+                                    Cough
+                                </option>
+
+                                <option value="Fever">
+                                    Fever
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SYMPTOM 2 -->
+
+                        <div class="form-group">
+
+                            <label for="Symptom_2">
+                                Symptom 2
+                            </label>
+
+                            <select id="Symptom_2" required>
+
+                                <option value="">
+                                    Select symptom
+                                </option>
+
+                                <option value="Fatigue">
+                                    Fatigue
+                                </option>
+
+                                <option value="Sore throat">
+                                    Sore throat
+                                </option>
+
+                                <option value="Body ache">
+                                    Body ache
+                                </option>
+
+                                <option value="Shortness of breath">
+                                    Shortness of breath
+                                </option>
+
+                                <option value="Runny nose">
+                                    Runny nose
+                                </option>
+
+                                <option value="Headache">
+                                    Headache
+                                </option>
+
+                                <option value="Cough">
+                                    Cough
+                                </option>
+
+                                <option value="Fever">
+                                    Fever
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- SYMPTOM 3 -->
+
+                        <div class="form-group full-width">
+
+                            <label for="Symptom_3">
+                                Symptom 3
+                            </label>
+
+                            <select id="Symptom_3" required>
+
+                                <option value="">
+                                    Select symptom
+                                </option>
+
+                                <option value="Fatigue">
+                                    Fatigue
+                                </option>
+
+                                <option value="Sore throat">
+                                    Sore throat
+                                </option>
+
+                                <option value="Body ache">
+                                    Body ache
+                                </option>
+
+                                <option value="Shortness of breath">
+                                    Shortness of breath
+                                </option>
+
+                                <option value="Runny nose">
+                                    Runny nose
+                                </option>
+
+                                <option value="Headache">
+                                    Headache
+                                </option>
+
+                                <option value="Cough">
+                                    Cough
+                                </option>
+
+                                <option value="Fever">
+                                    Fever
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= VITAL SIGNS ================= -->
+
+                <section>
+
+                    <div class="section-title">
+
+                        <span>03</span>
+
+                        <div>
+                            <h2>Vital Signs</h2>
+                            <p>Enter the patient's vital measurements</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <!-- HEART RATE -->
+
+                        <div class="form-group">
+
+                            <label for="Heart_Rate_bpm">
+                                Heart Rate
+                                <small>(bpm)</small>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Heart_Rate_bpm"
+                                min="0"
+                                placeholder="e.g. 80"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- TEMPERATURE -->
+
+                        <div class="form-group">
+
+                            <label for="Body_Temperature_C">
+                                Body Temperature
+                                <small>(°C)</small>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Body_Temperature_C"
+                                step="0.1"
+                                placeholder="e.g. 37.0"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- OXYGEN -->
+
+                        <div class="form-group">
+
+                            <label for="Oxygen_Saturation">
+                                Oxygen Saturation
+                                <small>(%)</small>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Oxygen_Saturation"
+                                min="0"
+                                max="100"
+                                placeholder="e.g. 98"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- SYSTOLIC -->
+
+                        <div class="form-group">
+
+                            <label for="Systolic_BP">
+                                Systolic Blood Pressure
+                                <small>(mmHg)</small>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Systolic_BP"
+                                min="0"
+                                placeholder="e.g. 120"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- DIASTOLIC -->
+
+                        <div class="form-group">
+
+                            <label for="Diastolic_BP">
+                                Diastolic Blood Pressure
+                                <small>(mmHg)</small>
+                            </label>
+
+                            <input
+                                type="number"
+                                id="Diastolic_BP"
+                                min="0"
+                                placeholder="e.g. 80"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ================= BUTTON ================= -->
+
+                <button
+                    type="submit"
+                    id="predictButton"
+                    class="predict-btn"
+                >
+
+                    <span>Predict Severity</span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </form>
+
+
+
+            <!-- ================= RESULT ================= -->
+
+            <div id="result" class="result hidden">
+
+                <div class="result-header">
+
+                    <div>
+                        <p>Prediction Result</p>
+                        <h2>Assessment Complete</h2>
+                    </div>
+
+                    <div class="check-icon">
+                        ✓
+                    </div>
+
+                </div>
+
+
+                <div class="result-content">
+
+                    <div class="severity-section">
+
+                        <p class="result-label">
+                            Predicted Severity
+                        </p>
+
+                        <h3 id="severityResult">
+                            -
+                        </h3>
+
+                    </div>
+
+
+                    <div class="confidence-section">
+
+                        <div class="confidence-top">
+
+                            <p class="result-label">
+                                Model Confidence
+                            </p>
+
+                            <strong id="confidenceResult">
+                                -
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-container">
+
+                            <div
+                                id="confidenceBar"
+                                class="progress-bar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= ERROR ================= -->
+
+            <div id="error" class="error hidden"></div>
+
+
+        </main>
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <p>
+                ML-based severity prediction system
+            </p>
+
+        </footer>
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const form =
+            document.getElementById("predictionForm");
+
+        const result =
+            document.getElementById("result");
+
+        const errorBox =
+            document.getElementById("error");
+
+        const severityResult =
+            document.getElementById("severityResult");
+
+        const confidenceResult =
+            document.getElementById("confidenceResult");
+
+        const confidenceBar =
+            document.getElementById("confidenceBar");
+
+        const predictButton =
+            document.getElementById("predictButton");
+
+
+        form.addEventListener(
+            "submit",
+            async function(event) {
+
+                event.preventDefault();
+
+
+                // Hide previous messages
+
+                result.classList.add("hidden");
+
+                errorBox.classList.add("hidden");
+
+
+                // Loading state
+
+                predictButton.disabled = true;
+
+                predictButton.querySelector("span").textContent =
+                    "Predicting...";
+
+
+                // Collect input data
+
+                const data = {
+
+                    Age: Number(
+                        document.getElementById("Age").value
+                    ),
+
+                    Gender:
+                        document.getElementById("Gender").value,
+
+                    Symptom_1:
+                        document.getElementById("Symptom_1").value,
+
+                    Symptom_2:
+                        document.getElementById("Symptom_2").value,
+
+                    Symptom_3:
+                        document.getElementById("Symptom_3").value,
+
+                    Heart_Rate_bpm: Number(
+                        document.getElementById(
+                            "Heart_Rate_bpm"
+                        ).value
+                    ),
+
+                    Body_Temperature_C: Number(
+                        document.getElementById(
+                            "Body_Temperature_C"
+                        ).value
+                    ),
+
+                    "Oxygen_Saturation_%": Number(
+                        document.getElementById(
+                            "Oxygen_Saturation"
+                        ).value
+                    ),
+
+                    Systolic_BP: Number(
+                        document.getElementById(
+                            "Systolic_BP"
+                        ).value
+                    ),
+
+                    Diastolic_BP: Number(
+                        document.getElementById(
+                            "Diastolic_BP"
+                        ).value
+                    )
+
+                };
+
+
+                try {
+
+                    const response = await fetch(
+                        "/predict",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify(data)
+                        }
+                    );
+
+
+                    const prediction =
+                        await response.json();
+
+
+                    if (!response.ok) {
+
+                        throw new Error(
+                            prediction.error ||
+                            "Prediction failed"
+                        );
+
+                    }
+
+
+                    // =========================
+                    // DISPLAY RESULT
+                    // =========================
+
+                    const severity =
+                        prediction.severity;
+
+                    const confidence =
+                        prediction.confidence * 100;
+
+
+                    severityResult.textContent =
+                        severity;
+
+                    confidenceResult.textContent =
+                        confidence.toFixed(2) + "%";
+
+
+                    confidenceBar.style.width =
+                        confidence + "%";
+
+
+                    // Remove old severity classes
+
+                    severityResult.classList.remove(
+                        "mild",
+                        "moderate",
+                        "severe"
+                    );
+
+
+                    // Add current severity class
+
+                    severityResult.classList.add(
+                        severity.toLowerCase()
+                    );
+
+
+                    // Show result
+
+                    result.classList.remove(
+                        "hidden"
+                    );
+
+
+                    // Scroll to result
+
+                    result.scrollIntoView({
+                        behavior: "smooth",
+                        block: "center"
+                    });
+
+                }
+
+
+                catch (error) {
+
+                    errorBox.textContent =
+                        error.message;
+
+                    errorBox.classList.remove(
+                        "hidden"
+                    );
+
+                }
+
+
+                finally {
+
+                    predictButton.disabled =
+                        false;
+
+                    predictButton.querySelector(
+                        "span"
+                    ).textContent =
+                        "Predict Severity";
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
